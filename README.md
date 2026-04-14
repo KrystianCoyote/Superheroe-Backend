@@ -8,7 +8,7 @@ Este es el backend para la aplicación de superhéroes, desarrollado con **Node.
 
 1. **Clonar el repositorio (todavía no terminado):**
 ```bash
-git clone <url>
+git clone https://github.com/KrystianCoyote/Superheroe-Backend
 cd Superheroes-backend
 ```
 
