@@ -1,0 +1,70 @@
+.container {
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.hero-grid {
+  display: grid;
+  // Esto crea las 4 columnas que pediste
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+
+  // Responsivo: si la pantalla es chica, baja a 2 o 1 columna
+  @media (max-width: 1100px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.hero-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover { transform: translateY(-10px); }
+
+  .img-container {
+    background: #f8f9fa;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    .hero-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .hero-info {
+    padding: 1.5rem;
+    text-align: center;
+
+    h3 { margin-bottom: 0.5rem; color: #333; }
+    .power { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+  }
+}
+
+.btn-fav {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.3s;
+
+  &:hover { background: #0056b3; }
+}

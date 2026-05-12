@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="title">Mis Héroes Favoritos ⭐</h1>
+
+  <div class="hero-grid">
+    @for (hero of heroes(); track hero.id) {
+      <div class="hero-card">
+        <img [src]="'assets/img/' + getCleanName(hero.nombre) + '.png'"
+             [alt]="hero.nombre"
+             class="hero-img">
+
+        <div class="hero-info">
+          <h3>{{ hero.nombre }}</h3>
+          <p><strong>Poder:</strong> {{ hero.poder }}</p>
+
+          <button class="btn-delete" (click)="eliminarFavorito(hero.id)">
+            Quitar de favoritos 🗑️
+          </button>
+        </div>
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <p>Aún no tienes favoritos. ¡Ve al catálogo y elige a los mejores!</p>
+      </div>
+    }
+  </div>
+</div>

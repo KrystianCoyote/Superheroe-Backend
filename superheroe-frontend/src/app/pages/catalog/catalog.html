@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="title">Catálogo de Superhéroes</h1>
+
+  <div class="hero-grid">
+    @for (hero of heroes(); track hero.id) {
+      <div class="hero-card">
+        <div class="img-container">
+          <img [src]="'assets/img/' + getCleanName(hero.nombre) + '.png'"
+               [alt]="hero.nombre"
+               class="hero-img">
+        </div>
+
+        <div class="hero-info">
+          <h3>{{ hero.nombre }}</h3>
+          <p class="power"><strong>Poder:</strong> {{ hero.poder }}</p>
+
+          <button
+            [class]="isFavorite(hero.id) ? 'btn-is-fav' : 'btn-fav'"
+            (click)="addFavorite(hero.id)"
+            [disabled]="isFavorite(hero.id)">
+            {{ isFavorite(hero.id) ? 'En Favoritos ✅' : 'Añadir a Favoritos ⭐' }}
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

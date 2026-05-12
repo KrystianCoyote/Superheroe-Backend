@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Catálogo SuperHeroes - Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="loginData.email"
+          required
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="loginData.password"
+          required
+          class="form-control">
+      </div>
+
+      <button type="submit" class="btn-primary">Entrar</button>
+
+      <div class="footer-link">
+        <p>¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a></p>
+      </div>
+    </form>
+  </div>
+</div>

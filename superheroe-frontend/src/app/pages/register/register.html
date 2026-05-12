@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Crear Cuenta UAdeO</h2>
+    <form (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label>Nombre Completo</label>
+        <input
+          type="text"
+          name="nombre"
+          [(ngModel)]="registerData.nombre"
+          required
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="registerData.email"
+          required
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="registerData.password"
+          required
+          class="form-control">
+      </div>
+
+      <button type="submit" class="btn-primary">Registrarse</button>
+
+      <div class="footer-link">
+        <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+      </div>
+    </form>
+  </div>
+</div>

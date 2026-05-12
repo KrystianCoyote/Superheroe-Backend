@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Mis Superhéroes Favoritos</h1>
+
+  <div class="heroes-grid">
+    @for (hero of favorites(); track hero.id) {
+      <div class="hero-card">
+        <img [src]="'assets/img/' + hero.nombre + '.png'" [alt]="hero.nombre">
+        <h3>{{ hero.nombre }}</h3>
+        <p>{{ hero.identidad_secreta }}</p>
+        <button (click)="remove(hero.id)">Eliminar</button>
+      </div>
+    }
+  </div>
+</div>

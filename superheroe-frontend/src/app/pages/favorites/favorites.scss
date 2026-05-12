@@ -1,0 +1,82 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.hero-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .hero-info {
+    padding: 1.5rem;
+    text-align: center;
+
+    h3 {
+      margin: 0 0 0.5rem;
+      color: #222;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.btn-delete {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #dc3545; // Rojo para indicar eliminación
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #c82333;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 3rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+
+  p {
+    color: #888;
+    font-size: 1.2rem;
+  }
+}

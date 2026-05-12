@@ -1,0 +1,14 @@
+@if (authService.currentUser()) {
+  <nav class="navbar">
+    <div class="nav-brand">HeroApp UAdeO</div>
+    <div class="nav-links">
+      <a routerLink="/catalog" routerLinkActive="active">Catálogo</a>
+      <a routerLink="/favorites" routerLinkActive="active">Mis Favoritos ⭐</a>
+      <button (click)="logout()" class="btn-logout">Cerrar Sesión</button>
+    </div>
+  </nav>
+}
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
