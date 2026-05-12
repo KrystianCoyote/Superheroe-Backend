@@ -1,92 +1,80 @@
-# 🦸‍♂️ Superheroe Fullstack App (UAdeO)
+# 🦸‍♂️ Superheroe App - Frontend
 
-Este repositorio contiene una aplicación completa para la gestión de superhéroes, permitiendo a los usuarios registrarse, explorar un catálogo y gestionar sus héroes favoritos en tiempo real.
-
----
-
-## 📂 Estructura del Proyecto
-
-* **Raíz (`/`)**: Servidor Backend (Node.js + TypeScript + Knex).
-* **`/superheroe-frontend`**: Frontend (Angular 21 + Signals).
+Este proyecto es la interfaz de usuario para la aplicación de gestión de Superhéroes. Fue generado utilizando [Angular CLI](https://github.com/angular/angular-cli) versión 21.2.10.
 
 ---
 
-## 🛠️ 1. Configuración del Backend (Servidor)
+## 🚀 Características Principales
 
-Abre una terminal en la carpeta raíz del proyecto y realiza los siguientes pasos:
+* **Autenticación:** Sistema de inicio de sesión y registro con protección de rutas (Auth Guards).
+* **Catálogo de Héroes:** Visualización dinámica de superhéroes consumidos desde una API REST.
+* **Mis Favoritos:** Interfaz para guardar y gestionar héroes, utilizando `Signals` para una reactividad instantánea.
+* **Notificaciones:** Feedback visual interactivo mediante `@ngneat/hot-toast`.
 
-### A. Instalar Dependencias
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+* **Framework:** Angular 21 (Standalone Components).
+* **Estilos:** SCSS modular.
+* **Estado:** Signals nativos de Angular.
+* **Peticiones HTTP:** `HttpClient` para conexión con el backend Node.js.
+
+---
+
+## ⚙️ Servidor de Desarrollo
+
+Para iniciar el servidor local, asegúrate de estar dentro de la carpeta `superheroe-frontend` y ejecuta:
+
 ```bash
 npm install
-```
-
-### B. Configurar Variables de Entorno
-Crea un archivo llamado `.env` en la raíz y configura tus credenciales de base de datos:
-```env
-DB_USER=tu_usuario
-DB_PASSWORD=tu_password
-DB_NAME=superheroe_db
-JWT_SECRET=una_clave_secreta_muy_segura
-```
-
-### C. Preparar la Base de Datos
-Ejecuta las migraciones y los datos de prueba (seeds) en orden:
-```bash
-npx knex migrate:latest
-npx knex seed:run
-```
-
-### D. Iniciar el Servidor
-```bash
-npm run dev
-```
-*El servidor correrá por defecto en http://localhost:3000.*
-
----
-
-## 🎨 2. Configuración del Frontend (Angular)
-
-Abre una **nueva terminal** (sin cerrar la del backend) y entra a la carpeta del frontend:
-
-### A. Entrar a la carpeta e instalar dependencias
-```bash
-cd superheroe-frontend
-npm install
-```
-
-### B. Iniciar la Aplicación
-```bash
 ng serve
 ```
 
-### C. Acceso al Navegador
-Navega a la siguiente dirección:
-👉 **http://localhost:4200/**
+Una vez que el servidor esté corriendo, abre tu navegador y navega a `http://localhost:4200/`. La aplicación se recargará automáticamente cada vez que modifiques algún archivo fuente.
+
+*(Nota: Asegúrate de tener el backend corriendo en su respectivo puerto para que el catálogo y el login funcionen correctamente).*
 
 ---
 
-## 🔧 3. Comandos Útiles de Angular CLI
+## 🏗️ Generación de Código (Scaffolding)
 
-Si necesitas expandir el proyecto, usa estos comandos dentro de la carpeta `superheroe-frontend`:
-
-* **Crear Componente:** `ng generate component nombre-componente`
-* **Compilar para Producción:** `ng build`
-* **Ejecutar Pruebas:** `ng test`
-
----
-
-## 🚀 4. Guía de Git (Para subir cambios)
-
-Si realizas modificaciones y quieres subirlas a tu repositorio:
+Angular CLI incluye potentes herramientas de generación. Para crear un nuevo componente, ejecuta:
 
 ```bash
-git add .
-git commit -m "Finalizada integración Fullstack y documentación"
-git push origin main
+ng generate component nombre-del-componente
+```
+
+Para ver la lista completa de esquemas disponibles (como `services`, `directives`, o `pipes`), ejecuta:
+
+```bash
+ng generate --help
 ```
 
 ---
 
-## 🛡️ Notas Importantes
-* **Node_modules:** Nunca subas estas carpetas a GitHub. Asegúrate de que el archivo `.gitignore` las incluya.
-* **Orden de ejecución:** Siempre inicia primero el Backend y luego el Frontend para que la aplicación pueda consumir los datos correctamente.
+## 📦 Construcción (Build)
+
+Para compilar el proyecto y prepararlo para producción, ejecuta:
+
+```bash
+ng build
+```
+
+Esto compilará tu proyecto y guardará los archivos resultantes en el directorio `dist/`. La compilación de producción optimiza la aplicación para mejorar el rendimiento y la velocidad de carga.
+
+---
+
+## 🧪 Pruebas Unitarias
+
+Para ejecutar las pruebas unitarias con el test runner configurado (como Vitest o Karma), utiliza el siguiente comando:
+
+```bash
+ng test
+```
+
+---
+
+## 📚 Recursos Adicionales
+
+Para obtener más información sobre el uso de Angular CLI, incluyendo referencias detalladas de comandos, visita la página oficial de [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
