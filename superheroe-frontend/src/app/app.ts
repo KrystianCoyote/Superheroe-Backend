@@ -11,12 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.scss'
 })
 export class App {
+  // Cambiado a public para que el HTML pueda leer sus métodos sin restricciones
   public authService = inject(AuthService);
   private router = inject(Router);
 
   logout() {
-    localStorage.removeItem('token');
-    this.authService.currentUser.set(null);
+    // Usamos el logout centralizado de tu servicio que limpia el token correctamente
+    this.authService.logout();
     this.router.navigate(['/login']);
   }
 }

@@ -1,0 +1,110 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  min-height: calc(100vh - 80px);
+  background-color: #f5f7fa;
+}
+
+.form-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 650px;
+
+  h2 {
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+  }
+
+  .description {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-size: 0.9rem;
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, transform 0.1s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .btn-cancel {
+    background: #e2e8f0;
+    color: #475569;
+    border: none;
+
+    &:hover {
+      background: #cbd5e1;
+    }
+  }
+
+  .btn-submit {
+    background: #2563eb;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: #1d4ed8;
+    }
+  }
+}

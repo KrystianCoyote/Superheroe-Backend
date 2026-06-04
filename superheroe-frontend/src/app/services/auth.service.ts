@@ -1,45 +1,37 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private http = inject(HttpClient);
+  private apiUrl = '/api/auth';
 
-  // Signal para saber si el usuario está logueado en cualquier parte de la app
+  // Signal para manejar el estado del usuario de manera reactiva
   public currentUser = signal<any>(null);
 
-  // --- MÉTODO DE LOGIN ---
-  // auth.service.ts
-login(credentials: any) {
-  return this.http.post<any>('/api/auth/login', credentials).pipe(
-    tap(res => {
-      if (res.token) {
-        localStorage.setItem('token', res.token);
-        // Aquí guardamos lo que venga del servidor (ajusta según tu respuesta)
-        this.currentUser.set(res.user || res);
-      }
-    })
-  );
-}
-
-  // --- MÉTODO DE REGISTRO ---
-  // Este es el que nos faltaba para completar el documento
-  register(userData: any) {
-    return this.http.post<any>('/api/auth/register', userData).pipe(
-      tap(res => {
-        console.log('Usuario registrado con éxito:', res);
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
+      tap(response => {
+        if (response && response.token) {
+          localStorage.setItem('token', response.token);
+          this.currentUser.set(response.user);
+        }
       })
     );
   }
 
-  // --- UTILIDADES ---
-  getToken() {
-    return localStorage.getItem('token');
+  register(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, userData);
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('token');
     this.currentUser.set(null);
+  }
+
+  // Método crucial que corrige tu error TS2339 en el AuthGuard
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
