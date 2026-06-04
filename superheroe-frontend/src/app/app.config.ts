@@ -1,20 +1,23 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHotToastConfig } from '@ngneat/hot-toast';
-import { provideHttpClient, withInterceptors } from '@angular/common/http'; // Añadimos withInterceptors
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { authInterceptor } from './services/auth.interceptor'; // Importa tu interceptor
+import { authInterceptor } from './services/auth.interceptor';
 
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    // Configuración avanzada de HttpClient para usar el Interceptor
-    provideHttpClient(
-      withInterceptors([authInterceptor])
-    ),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimations(),
-    provideHotToastConfig()
-  ]
+
+    // 🚀 CORREGIDO: Configuración para mover las alertas a la esquina inferior derecha
+    provideHotToastConfig({
+      position: 'bottom-right',
+      dismissible: true,
+      duration: 3500,
+    }),
+  ],
 };
