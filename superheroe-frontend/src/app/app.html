@@ -1,6 +1,11 @@
 @if (authService.isAuthenticated()) {
   <nav class="navbar">
     <div class="nav-brand">HeroApp UAdeO</div>
+
+    <div class="nav-welcome">
+      Bienvenido, <strong>Krystian Yahir</strong>! <span>🧙‍♂️</span>
+    </div>
+
     <div class="nav-links">
       <a routerLink="/catalog" routerLinkActive="active">Catálogo</a>
       <a routerLink="/favoritos" routerLinkActive="active">Mis Favoritos ⭐</a>

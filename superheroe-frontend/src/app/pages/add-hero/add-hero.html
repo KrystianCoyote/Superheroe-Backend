@@ -1,7 +1,7 @@
-<div class="form-container">
-  <div class="form-box">
-    <h2>⚡ Registrar Nuevo Superhéroe</h2>
-    <p class="description">Agrega un nuevo integrante al catálogo global de héroes</p>
+<div class="page-center-container">
+  <div class="custom-card">
+    <h2>⚡ Nuevo Superhéroe</h2>
+    <p class="subtitle">Agrega un nuevo integrante al catálogo global</p>
 
     <form (ngSubmit)="guardarHeroe()">
       <div class="form-group">
@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <label for="poder">Poder Principal *</label>
-        <input type="text" id="poder" name="poder" [(ngModel)]="nuevoHeroe.poder" required placeholder="Ej. Anillo de poder modelador de energía">
+        <input type="text" id="poder" name="poder" [(ngModel)]="nuevoHeroe.poder" required placeholder="Ej. Anillo de energía">
       </div>
 
       <div class="form-group">
@@ -21,14 +21,13 @@
           id="imagen_url"
           name="imagen_url"
           disabled
-          [placeholder]="nuevoHeroe.nombre ? (nuevoHeroe.nombre.toLowerCase().replace(' ', '')) + '.png' : 'Ej. Superman.png'">
+          [placeholder]="nuevoHeroe.nombre ? (nuevoHeroe.nombre.toLowerCase().replace(' ', '')) + '.png' : 'Ej. joelevil.png'">
       </div>
 
-      <div class="form-actions">
-        <button type="button" class="btn-cancel" (click)="cancelar()">Cancelar</button>
-        <button type="submit" class="btn-submit">Guardar Héroe 💾</button>
+      <div style="display: flex; gap: 15px; margin-top: 25px;">
+        <button type="button" class="btn-danger-custom" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="btn-primary-custom">Guardar 💾</button>
       </div>
     </form>
   </div>
 </div>
-

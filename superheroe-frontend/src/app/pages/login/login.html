@@ -1,32 +1,25 @@
-<div class="login-container">
-  <div class="login-card">
-    <h2>Catálogo SuperHeroes - Login</h2>
+<div class="page-center-container">
+  <div class="custom-card">
+    <h2>🦸‍♂️ SuperHeroes</h2>
+    <p class="subtitle">Ingresa tus credenciales para acceder al catálogo</p>
+
     <form (ngSubmit)="onLogin()">
       <div class="form-group">
         <label>Correo electrónico</label>
-        <input
-          type="email"
-          name="email"
-          [(ngModel)]="loginData.email"
-          required
-          class="form-control">
+        <input type="email" name="email" [(ngModel)]="loginData.email" required placeholder="tu@correo.com">
       </div>
 
       <div class="form-group">
         <label>Contraseña</label>
-        <input
-          type="password"
-          name="password"
-          [(ngModel)]="loginData.password"
-          required
-          class="form-control">
+        <input type="password" name="password" [(ngModel)]="loginData.password" required placeholder="••••••••">
       </div>
 
-      <button type="submit" class="btn-primary">Entrar</button>
+      <button type="submit" class="btn-primary-custom">Entrar al Sistema 🚀</button>
 
-      <div class="footer-link">
-        <p>¿No tienes cuenta? <a [routerLink]="['/register']" style="cursor: pointer; font-weight: bold;">Regístrate aquí</a></p>
-      </div>
+      <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+        ¿No tienes cuenta?
+        <a [routerLink]="['/register']" style="cursor: pointer; color: #007bff; font-weight: bold; text-decoration: none;">Regístrate aquí</a>
+      </p>
     </form>
   </div>
 </div>

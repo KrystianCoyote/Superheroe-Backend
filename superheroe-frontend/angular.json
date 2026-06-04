@@ -30,9 +30,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -59,20 +57,20 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-  "builder": "@angular/build:dev-server",
-  "options": {
-    "proxyConfig": "proxy.conf.json"
-  },
-  "configurations": {
-    "production": {
-      "buildTarget": "superheroe-frontend:build:production"
-    },
-    "development": {
-      "buildTarget": "superheroe-frontend:build:development"
-    }
-  },
-  "defaultConfiguration": "development"
-},
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "superheroe-frontend:build:production"
+            },
+            "development": {
+              "buildTarget": "superheroe-frontend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
         "test": {
           "builder": "@angular/build:unit-test"
         }
