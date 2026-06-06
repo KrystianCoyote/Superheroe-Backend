@@ -1,4 +1,5 @@
 # Superheroes Backend API
+Krystian García 23040132
 
 Este es el backend para la aplicación de superhéroes, desarrollado con **Node.js**, **Express**, **TypeScript** y **PostgreSQL**.
 
